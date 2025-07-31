@@ -24,5 +24,10 @@ namespace Wpf_Study
         {
             InitializeComponent();
         }
+
+        private void Clik_me_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxShowHello.Text= "hello world !";
+        }
     }
 }
