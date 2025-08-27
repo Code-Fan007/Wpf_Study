@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFDevelopers.Helpers;
+
 
 namespace Wpf_Study
 {
@@ -27,7 +29,29 @@ namespace Wpf_Study
 
         private void Clik_me_Click(object sender, RoutedEventArgs e)
         {
-            TextBoxShowHello.Text= "hello world !";
+            TextBoxShowHello.Text= "欢迎登录!";
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        private void btnMin_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+        private void TextBoxShowHello_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Wpf_Study"
         mc:Ignorable="d"
         Title="樊磊先生的WPF文件" Height="450" Width="800">
+
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -19,7 +22,28 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.OpacityMask>
-        <TextBox x:Name="TextBoxShowHello" HorizontalAlignment="Left" Margin="156,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="120"/>
-        <Button x:Name="ButtonSayHello" Content="Click me" HorizontalAlignment="Left" Margin="156,0,0,0" VerticalAlignment="Center" Height="96" Width="416" OpacityMask="#FF014F4A" Click="Clik_me_Click"/>
+        <TextBox x:Name="TextBoxShowHello" HorizontalAlignment="Left" Margin="242,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" Height="97" TextChanged="TextBoxShowHello_TextChanged"/>
+        <!--<Button x:Name="ButtonSayHello" Content="Click me" HorizontalAlignment="Left" Margin="150,322,0,0" VerticalAlignment="Top" Height="30" Width="156" OpacityMask="#FF014F4A" Click="Clik_me_Click"/>-->
+        <!-- 密码框和登录框 -->
+        <Button x:Name="登录" Content="登录" HorizontalAlignment="Left" Margin="260,338,0,0" VerticalAlignment="Top" Height="58" Width="508" OpacityMask="#FF014F4A" Click="Clik_me_Click"/>
+        <PasswordBox x:Name="passwordBox" Margin="398,261,32,129" ToolTip="请输入用户名"/>
+        <Button Content="X" HorizontalAlignment="Right" Foreground="White" Height="33" Width="35" VerticalAlignment="Top" Click="Button_Click" Style="{DynamicResource myButtonStyle}" RenderTransformOrigin="-1.046,-1.051" />
+        <Button Content="一" Name="btnMin" Click="btnMin_Click" HorizontalAlignment="Right" Foreground="White" Margin="0,0,32,0" Height="33" Width="35" VerticalAlignment="Top" Style="{DynamicResource myButtonStyle}" />
+        <!--<controls:CodeViewer Header="{Binding NavigateMenuItem.Name}">
+            <Button Content="窗体抖动" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ButtonBase_OnClick"></Button>
+            <controls:CodeViewer.SourceCodes>
+                <controls:SourceCodeModel 
+                CodeSource="/WPFDevelopers.SamplesCode;component/ExampleViews/ShakeExample.xaml" 
+                CodeType="Xaml"/>
+                <controls:SourceCodeModel 
+                CodeSource="/WPFDevelopers.SamplesCode;component/ExampleViews/ShakeExample.xaml.cs" 
+                CodeType="CSharp"/>
+            </controls:CodeViewer.SourceCodes>
+        </controls:CodeViewer>-->
+        <!-- 使用 MaterialDesign 的 Watermark -->
+        <TextBox materialDesign:HintAssist.Hint="请输入用户名"  Margin="400,154,50,179" TextChanged="TextBox_TextChanged"/>
+
+
+
     </Grid>
 </Window>
