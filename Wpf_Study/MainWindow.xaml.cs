@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFDevelopers.Helpers;
 
+//using EMTD.ComLibrary;
 
 namespace Wpf_Study
 {
@@ -52,6 +53,14 @@ namespace Wpf_Study
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+           /* if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }*/
         }
     }
 }
