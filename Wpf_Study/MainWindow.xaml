@@ -22,28 +22,18 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.OpacityMask>
-        <TextBox x:Name="TextBoxShowHello" HorizontalAlignment="Left" Margin="242,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" Height="97" TextChanged="TextBoxShowHello_TextChanged"/>
+        <TextBox x:Name="TextBoxShowHello" HorizontalAlignment="Left" Margin="231,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" Height="97" TextChanged="TextBoxShowHello_TextChanged"/>
         <!--<Button x:Name="ButtonSayHello" Content="Click me" HorizontalAlignment="Left" Margin="150,322,0,0" VerticalAlignment="Top" Height="30" Width="156" OpacityMask="#FF014F4A" Click="Clik_me_Click"/>-->
         <!-- 密码框和登录框 -->
-        <Button x:Name="登录" Content="登录" HorizontalAlignment="Left" Margin="260,338,0,0" VerticalAlignment="Top" Height="58" Width="508" OpacityMask="#FF014F4A" Click="Clik_me_Click"/>
+        <Button x:Name="登录" Content="登录" HorizontalAlignment="Left" Margin="160,332,0,0" VerticalAlignment="Top" Height="58" Width="508" OpacityMask="#FF014F4A" Command="{Binding ShakeWindowCommand}" Click="Clik_me_Click"/>
         <PasswordBox x:Name="passwordBox" Margin="398,261,32,129" ToolTip="请输入用户名"/>
         <Button Content="X" HorizontalAlignment="Right" Foreground="White" Height="33" Width="35" VerticalAlignment="Top" Click="Button_Click" Style="{DynamicResource myButtonStyle}" RenderTransformOrigin="-1.046,-1.051" />
         <Button Content="一" Name="btnMin" Click="btnMin_Click" HorizontalAlignment="Right" Foreground="White" Margin="0,0,32,0" Height="33" Width="35" VerticalAlignment="Top" Style="{DynamicResource myButtonStyle}" />
-        <!--<controls:CodeViewer Header="{Binding NavigateMenuItem.Name}">
-            <Button Content="窗体抖动" VerticalAlignment="Center" HorizontalAlignment="Center" Click="ButtonBase_OnClick"></Button>
-            <controls:CodeViewer.SourceCodes>
-                <controls:SourceCodeModel 
-                CodeSource="/WPFDevelopers.SamplesCode;component/ExampleViews/ShakeExample.xaml" 
-                CodeType="Xaml"/>
-                <controls:SourceCodeModel 
-                CodeSource="/WPFDevelopers.SamplesCode;component/ExampleViews/ShakeExample.xaml.cs" 
-                CodeType="CSharp"/>
-            </controls:CodeViewer.SourceCodes>
-        </controls:CodeViewer>-->
+
         <!-- 使用 MaterialDesign 的 Watermark -->
-        <TextBox materialDesign:HintAssist.Hint="请输入用户名"  Margin="400,154,50,179" TextChanged="TextBox_TextChanged"/>
-
-
+        <TextBox materialDesign:HintAssist.Hint="请输入用户名"  Margin="398,206,32,179" TextChanged="TextBox_TextChanged"/>
+        <Label Content="账户" HorizontalAlignment="Left" Margin="353,212,0,0" VerticalAlignment="Top" Height="38" Width="40"/>
+        <Label Content="密码" HorizontalAlignment="Left" Margin="353,264,0,0" VerticalAlignment="Top" Height="38" Width="40"/>
 
     </Grid>
 </Window>

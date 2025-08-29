@@ -13,9 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFDevelopers.Helpers;
-
+using System.Media;
+using System.Windows.Media.Animation;
+using System.IO;
 //using EMTD.ComLibrary;
-
+using Shake;
 namespace Wpf_Study
 {
     /// <summary>
@@ -23,14 +25,11 @@ namespace Wpf_Study
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+      
 
         private void Clik_me_Click(object sender, RoutedEventArgs e)
         {
-            TextBoxShowHello.Text= "欢迎登录!";
+            TextBoxShowHello.Text = "你好！欢迎登录!";
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -57,10 +56,28 @@ namespace Wpf_Study
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           /* if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }*/
+           
         }
+        public MainWindow()
+        {
+            InitializeComponent();
+            DataContext = this;          // 把窗口自身当 ViewModel
+
+        }
+
+        
+        private ICommand _shakeCmd;
+        public ICommand ShakeWindowCommand =>
+            _shakeCmd ?? (_shakeCmd = new RelayCommand(o => WindowHelper.WindowShake()));
+        // 就地放一个 RelayCommand
+        public class RelayCommand : ICommand
+        {
+            private readonly Action<object> _execute;
+            public RelayCommand(Action<object> execute) => _execute = execute;
+            public bool CanExecute(object parameter) => true;
+            public void Execute(object parameter) => _execute(parameter);
+            public event EventHandler CanExecuteChanged { add { } remove { } }
+        }
+
     }
 }
