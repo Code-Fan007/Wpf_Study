@@ -38,6 +38,8 @@ namespace Wpf_Study
         private void btnMin_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+
+
         }
         private void TextBoxShowHello_TextChanged(object sender, TextChangedEventArgs e)
         {
